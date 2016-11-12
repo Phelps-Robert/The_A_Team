@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -25,8 +23,7 @@ public class HibernateInterface {
         //commit the transaction to the database
         session.getTransaction().commit();
         //close the session
-        session.close();
-        
+        session.close(); 
     }
     
     public void addDeposit(BudgetAccount account, double dep) {

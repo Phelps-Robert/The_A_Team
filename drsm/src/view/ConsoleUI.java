@@ -34,7 +34,8 @@ public class ConsoleUI {
             + "\n3 - Add Deposits"
             + "\n4 - Add Expenses"
             + "\n5 - Check Balance"
-            + "\n6 - Exit"
+            + "\n6 - Test stuff"
+            + "\n7 - Exit"
             + "\n---------------------------------------";
          
          Scanner in = new Scanner(System.in);
@@ -62,10 +63,13 @@ public class ConsoleUI {
                 case 4: // start threads
                     this.addExpense();
                     break;
-                case 5: // exit
+                case 5: // check balance
                     this.checkBalance();
                     break;
-                case 6: // exit
+                case 6: // check balance
+                    this.testStuff();
+                    break;
+                case 7: // exit
                     System.exit(0);
                     break;
             }
@@ -89,6 +93,11 @@ public class ConsoleUI {
 
     private void checkBalance() {
         manager.checkBalanceV();
+    }
+
+    private void testStuff() {
+        manager.test();
+      
     }
 
 }

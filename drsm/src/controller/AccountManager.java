@@ -2,6 +2,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import model.BudgetAccount;
 import model.Deposits;
@@ -28,6 +29,10 @@ public class AccountManager {
     AddExpenseView addExpenseView = new AddExpenseView();
     CheckBalanceView checkBalanceView = new CheckBalanceView();
     HibernateInterface hib = new HibernateInterface();
+    
+    List<BudgetAccount> allAccounts;
+    
+    
 
     
     
@@ -53,7 +58,7 @@ public class AccountManager {
         this.commitExpense(account, depositAmount);
     }
     
-        public void commitDeposit(String account, double dep) {
+    public void commitDeposit(String account, double dep) {
         int primID = hib.getOneAccount(account);
         BudgetAccount acc = hib.getAccountsById(primID);
         hib.addDeposit(acc, dep);
@@ -72,6 +77,37 @@ public class AccountManager {
     public void deleteAccount() {
         
     }
+    
+    public void test(){
+        allAccounts = hib.getAllAccounts();
+        for (int i = 0; i < allAccounts.size(); i++) {
+            testStuff(i);
+        }
+    }
+    
+    public void testStuff(int i) {
+        /* Object[] acc = new Object[5];
+        
+                acc[0] = ((BudgetAccount) allAccounts.get(i)).getAccountId();
+                acc[1] = ((BudgetAccount) allAccounts.get(i)).getAccountName();
+                acc[2] = ((BudgetAccount) allAccounts.get(i)).getAccountDesc();
+                acc[3] = ((BudgetAccount) allAccounts.get(i)).getBalance();
+                acc[4] = ((BudgetAccount) allAccounts.get(i)).getAccountDeposits();
+                acc[5] = ((BudgetAccount) allAccounts.get(i)).getAccountExpenses();
+        */
+        String[] acc = new String[4];
+            acc[0] = Integer.toString(allAccounts.get(i).getAccountId());
+            acc[1] = allAccounts.get(i).getAccountName();
+            acc[2] = allAccounts.get(i).getAccountDesc();
+            acc[3] = Double.toString(allAccounts.get(i).getBalance());
+
+            
+            System.out.println("ACCOUNT ID: " + acc[0]);
+            System.out.println("ACCOUNT NAME: " +acc[1]);
+            System.out.println(acc[2]);
+            System.out.println(acc[3]);
+            System.out.println();
+    }
    
     
     // getters
@@ -83,6 +119,8 @@ public class AccountManager {
     public void setAccounts(ArrayList accounts) {
         this.accounts = accounts;
     }
+
+
 
 
     
