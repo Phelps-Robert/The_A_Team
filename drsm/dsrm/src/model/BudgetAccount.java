@@ -18,7 +18,9 @@ import javax.persistence.Table;
 @Table (name="Accounts")   // defines the name of the database table
 public class BudgetAccount implements Serializable{
     
-    // variables
+    /****************
+     * VARIABLES
+     ***************/
     @Id @GeneratedValue // defines the primary key for the database and auto genertate the value
     @Column (name="AccountId") // defines the name of the database column
     private int accountId;
@@ -41,7 +43,9 @@ public class BudgetAccount implements Serializable{
     private double balance;
 
     
-    // default constructor
+    /****************
+     * CONSTRUCTORS
+     ***************/
     public BudgetAccount() {
         
     }
@@ -52,8 +56,9 @@ public class BudgetAccount implements Serializable{
          this.balance = bal;
     }
     
-    
-    //getters
+    /****************
+     * GETTERS
+     ***************/
     public int getAccountId() {
         return accountId;
     }
@@ -78,8 +83,9 @@ public class BudgetAccount implements Serializable{
         return balance;
     }
 
-    
-    // setters
+    /****************
+     * SETTERS
+     ***************/
     public void setAccountId(int accountId) {
         this.accountId = accountId;
     }
@@ -105,7 +111,9 @@ public class BudgetAccount implements Serializable{
     }
 
 
-    // hachCode
+    /****************
+     * HASH CODE
+     ***************/
     @Override
     public int hashCode() {
         int hash = 5;
@@ -116,8 +124,9 @@ public class BudgetAccount implements Serializable{
         return hash;
     }
 
-    // equals
-
+    /****************
+     * EQUALS
+     ***************/
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -145,8 +154,9 @@ public class BudgetAccount implements Serializable{
         return true;
     }
 
-
-    // toString
+    /****************
+     * TO STRING
+     ***************/
     @Override
     public String toString() {
         return "BudgetAccount{" + "accountId=" + accountId + ", accountName=" + accountName + ", accountDesc=" + accountDesc + ", accountDeposits=" + accountDeposits + ", accountExpenses=" + accountExpenses + ", balance=" + balance + '}';

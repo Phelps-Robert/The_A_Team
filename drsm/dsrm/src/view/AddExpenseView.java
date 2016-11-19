@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Scanner;
 import model.HibernateInterface;
 
-/**
- *
- * @author Dallas
- */
+/**********************************************************
+*      MODEL FOR ADD EXPENSE ** CURRENTLY NOT USED **
+***********************************************************/
 public class AddExpenseView {
     
     Scanner in = new Scanner(System.in);

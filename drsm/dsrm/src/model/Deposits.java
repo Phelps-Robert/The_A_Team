@@ -2,7 +2,6 @@
 package model;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +15,9 @@ import javax.persistence.Table;
 @Table (name="Deposits")   // defines the name of the database table
 public class Deposits implements Serializable{
     
-    // member variables
+    /****************
+     * VARIABLES
+     ***************/
     @Id @GeneratedValue // defines the primary key for the database and auto genertate the value
     @Column (name="DepositId") // defines the name of the database column
     private int depositId;
@@ -29,13 +30,16 @@ public class Deposits implements Serializable{
     private BudgetAccount account;
     
     
-    // default constructor
+    /****************
+     * CONSTRUCTOR
+     ***************/
     public Deposits() {
         
     }
     
-    
-    // getters
+    /****************
+     * GETTERS
+     ***************/
     public int getDepositId() {
         return depositId;
     }
@@ -48,8 +52,9 @@ public class Deposits implements Serializable{
         return account;
     }
     
-    
-    // setters
+    /****************
+     * SETTERS
+     ***************/
     public void setDepositId(int depositId) {
         this.depositId = depositId;
     }

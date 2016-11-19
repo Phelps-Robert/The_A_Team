@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Scanner;
 import model.HibernateInterface;
 
-/**
- *
- * @author Dallas
- */
+/**********************************************************
+*      MODEL FOR ADD DEPOSIT ** CURRENTLY NOT USED **
+***********************************************************/
 public class AddDepositView {
     
     public static final String YELLOW = "\u001B[33m"; //Yellow color

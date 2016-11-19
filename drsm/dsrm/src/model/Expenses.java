@@ -15,6 +15,9 @@ import javax.persistence.Table;
 @Table (name="Expenses")   // defines the name of the database table
 public class Expenses implements Serializable {
     
+    /****************
+     * VARIABLES
+     ***************/
     @Id @GeneratedValue// defines the primary key for the database and auto genertate the value
     @Column (name="ExpenseId") // defines the name of the database column
     private int expenseID;
@@ -27,13 +30,16 @@ public class Expenses implements Serializable {
     private BudgetAccount account;
     
     
-    // default constructor
+    /****************
+     * CONSTRUCTORS
+     ***************/
     public Expenses() {
         
     }
     
-    
-    // getters
+    /****************
+     * GETTERS
+     ***************/
     public int getExpenseID() {
         return expenseID;
     }
@@ -45,9 +51,10 @@ public class Expenses implements Serializable {
     public BudgetAccount getAccount() {
         return account;
     }
-    
-    
-    // setters
+
+    /****************
+     * SETTERS
+     ***************/
     public void setExpenseID(int expenseID) {
         this.expenseID = expenseID;
     }

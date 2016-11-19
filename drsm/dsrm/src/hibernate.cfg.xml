@@ -10,7 +10,13 @@
  
     <property name="connection.username">dbleakfo_testUser</property>
  
-    <property name="connection.password">LdBU5foVbNXSbvIO</property>
+    <property name="connection.password">LdBU5foVbNXSbvIO</property> 
+    
+   <!-- <property name="connection.url">jdbc:mysql://69.89.31.240:3306/dbleakfo_BudgetAccount</property>
+ 
+    <property name="connection.username">dbleakfo_iClient</property>
+ 
+    <property name="connection.password">k5d+Ar}fybKb</property> -->
  
     <!-- Connection Pool Size (built-in) -->
  
@@ -26,7 +32,7 @@
  
     <!-- Echo all executed SQL to stdout -->
  
-    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.show_sql">true</property>
  
     <!-- Drop the existing tables and create new one if they do not exist -->
  

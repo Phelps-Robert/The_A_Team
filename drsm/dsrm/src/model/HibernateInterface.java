@@ -12,16 +12,26 @@ public class HibernateInterface {
     
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
     
+    // converts string array back to the account object to be saved.
     public BudgetAccount convertStringToObject(String[] editAccount) {
         BudgetAccount tempAccount = new BudgetAccount();
-        for (int i = 0; i < editAccount.length; i++) {
-            tempAccount.setAccountId(Integer.parseInt(editAccount[0]));
-            tempAccount.setAccountName(editAccount[1]);
-            tempAccount.setBalance(Double.parseDouble(editAccount[3]));
-        }
+            if (editAccount[0] != null) {
+                tempAccount.setAccountId(Integer.parseInt(editAccount[0]));
+            }
+            if (editAccount[1] != null) {
+                tempAccount.setAccountName(editAccount[1]);
+            }
+            if (editAccount[2] != null) {
+                tempAccount.setAccountDesc(editAccount[2]);
+            }
+            if (editAccount[3] != null) {
+                tempAccount.setBalance(Double.parseDouble(editAccount[3]));
+            }
+            
         return tempAccount;
     }
     
+    // creates a new account in the database
     public void createNewAccount(BudgetAccount newAccount) {
         
         //create a session and open a seesion in the session factory
@@ -36,8 +46,9 @@ public class HibernateInterface {
         session.close(); 
     }
     
+    // updates an account int the database
     public void updateAccount(BudgetAccount account) {
-    
+        
         //create a session and open a seesion in the session factory
         Session session = sessionFactory.openSession();
         //create a new transaction
@@ -50,6 +61,7 @@ public class HibernateInterface {
         session.close(); 
     }
     
+    // adds a deposit to a specific acccount in the 
     public void addDeposit(BudgetAccount account, double dep) {
         Deposits deposit = new Deposits();
         deposit.setAccount(account);

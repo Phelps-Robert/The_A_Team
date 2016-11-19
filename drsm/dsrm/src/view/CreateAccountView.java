@@ -12,7 +12,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
+/*****************************************************
+ * CLASS USED TO CREATE ACCOUNTS   ** DUMMY CLASSS **
+******************************************************/
 
 public class CreateAccountView {
     
@@ -54,11 +56,11 @@ public class CreateAccountView {
         BudgetAccount account2 = new BudgetAccount();
         account2.setAccountName("Groceries");
         account2.setAccountDesc("This account is used to budget groceries for our family");
-        account2.setBalance(450.00);
+        account2.setBalance(450.98);
         
         Deposits deposit1 = new Deposits();
         deposit1.setAccount(account);
-        deposit1.setDeposit(100.00);
+        deposit1.setDeposit(100.12);
         
         Deposits deposit2 = new Deposits();
         deposit2.setAccount(account);
@@ -66,7 +68,7 @@ public class CreateAccountView {
         
         Expenses expense1 = new Expenses();
         expense1.setAccount(account);
-        expense1.setExpense(200.00);
+        expense1.setExpense(200.42);
         
         Expenses expense2 = new Expenses();
         expense2.setAccount(account);

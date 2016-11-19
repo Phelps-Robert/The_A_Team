@@ -31,9 +31,9 @@ public class BudgetViewCLI {
                 System.out.print(" " + i + "   | ");
             }
             //Account name
-            if (accounts[i][0].length() < 20) {
+            if (accounts[i][1].length() < 20) {
                 System.out.print(accounts[i][1]);
-                for (int l = accounts[i][0].length(); l < 20; l++) {
+                for (int l = accounts[i][1].length(); l < 20; l++) {
                     System.out.print(" ");
                 }
             } else {
